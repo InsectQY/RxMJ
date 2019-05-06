@@ -37,8 +37,12 @@ extension RxMJRefreshFooterState: CustomDebugStringConvertible {
 
 public extension Reactive where Base: MJRefreshFooter {
     
-    public var refreshFooterState: Binder<RxMJRefreshFooterState> {
+    var refreshFooterState: Binder<RxMJRefreshFooterState> {
         return Binder(base) { footer, state in
+
+            if footer.state == .noMoreData {
+                return
+            }
             switch state {
             case .default:
                 footer.isHidden = false

@@ -1,6 +1,6 @@
 {
   "name": "RxMJ",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "summary": "MJ in Rx world",
   "description": "MJRefresh with RxCocoa",
   "homepage": "https://github.com/srv7/RxMJ",
@@ -12,21 +12,21 @@
     "srv7": "liubo004@126.com"
   },
   "source": {
-    "git": "https://github.com/srv7/RxMJ.git",
-    "tag": "0.3.0"
+    "git": "https://github.com/InsectQY/RxMJ",
+    "tag": "0.5.0"
   },
   "platforms": {
     "ios": "8.0"
   },
   "source_files": "RxMJ/Classes/**/*",
-  "swift_version": "4.2",
+  "swift_version": "5.0",
   "frameworks": "UIKit",
   "dependencies": {
     "MJRefresh": [
-      "~> 3.1.15.7"
+
     ],
     "RxCocoa": [
-      "~> 4.3.0"
+
     ]
   }
 }
