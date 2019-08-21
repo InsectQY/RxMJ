@@ -22,7 +22,7 @@ extension RxMJRefreshFooterState: CustomStringConvertible {
     public var description: String {
         switch self {
         case .default: return "默认状态"
-        case .noMoreData: return "没有更多数据"
+        case .noMoreData: return "没有更多数据了"
         case .hidden: return "隐藏"
         }
     }
@@ -39,10 +39,6 @@ public extension Reactive where Base: MJRefreshFooter {
     
     var refreshFooterState: Binder<RxMJRefreshFooterState> {
         return Binder(base) { footer, state in
-
-            if footer.state == .noMoreData {
-                return
-            }
             switch state {
             case .default:
                 footer.isHidden = false

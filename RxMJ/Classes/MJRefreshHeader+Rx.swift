@@ -20,7 +20,11 @@ public extension Reactive where Base: MJRefreshHeader {
     
     var isRefreshing: Binder<Bool> {
         return Binder(base) { header, refresh in
-            refresh ? header.beginRefreshing() : header.endRefreshing()
+            if refresh && header.isRefreshing {
+                return
+            } else {
+                refresh ? header.beginRefreshing() : header.endRefreshing()
+            }
         }
     }
 }
